@@ -1,6 +1,7 @@
-function Growl() {
-  this.id = id;
+function Growl(text) {
+  this.id = Growl.all.length;
   this.text = text;
+  Growl.all.push(this);
 }
 
 Growl.all = [];

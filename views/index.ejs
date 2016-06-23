@@ -6,6 +6,21 @@
   </head>
   <body>
     <h1><%=title%></h1>
-    
+    <form action="/" method="post">
+      <div>
+        <label>Growl a growl!</label>
+        <input type="text" name="Growl">
+        <input type="submit" value="Enter your growl!">
+      </div>
+    </form>
+
+    <section>
+      <ul>
+        <% growls.forEach(function(growl) { %>
+        <li><%= growl.text %></li>
+       <% }) %>
+      </ul>
+    </section>
+
   </body>
 </html>
