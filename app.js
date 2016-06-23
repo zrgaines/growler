@@ -32,6 +32,12 @@ app.use(session({
   cookie: { secure: true }
 }))
 
+app.use(function(req, res, next) {
+  req.session.feed = req.session.feed || [];
+  app.locals.feed = req.session.feed;
+  next();
+});
+
 app.use('/', routes);
 app.use('/users', users);
 // app.use('/growls', growls);
