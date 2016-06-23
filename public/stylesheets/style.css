@@ -6,3 +6,31 @@ body {
 a {
   color: #00B7FF;
 }
+h1 {
+  text-align: center;
+}
+
+.center {
+  width: 100%;
+  text-align: center;
+}
+
+label {
+  display: block;
+}
+
+textarea {
+  height: 100px;
+  width: 250px;
+}
+
+input {
+  width: 20%;
+  margin: 5px auto;
+  display: block;
+}
+
+p {
+  text-align: center;
+  margin: 10px 0;
+}

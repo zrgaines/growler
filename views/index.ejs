@@ -7,22 +7,20 @@
   </head>
   <body>
     <h1><%=title%></h1>
+
+  <div class="center">
     <form action="/" method="post">
-
-  <section>
-    <ul>
-      <% feed.forEach(function(item) { %>
-      <li><%= item.growl %></li>
-    <% }) %>
-    </ul>
-    </section>
-
-  <div>
-    <label>Growl a growl!</label>
-    <input type="text" name="growl">
-    <input type="submit" value="Enter your growl!">
+      <label>Growl a growl!</label>
+      <textarea name="growl" rows="8" cols="40" maxlength="141"></textarea>
+      <input type="submit" value="Enter your growl!">
+    </form>
   </div>
-  </form>
+  <section>
+      <% feed.forEach(function(item) { %>
+        <p><%= item.growl %></p>
+      <% }) %>
+  </section>
+
 
   </body>
 </html>
