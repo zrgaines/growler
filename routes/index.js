@@ -17,8 +17,14 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res, next) {
   var growl = req.body;
-  req.session.feed.push(growl);
+  var curSession = req.session.feed;
+  curSession.push(growl);
   res.redirect('/');
+  console.log(curSession);
 });
+
+router.get('/', function(req,res,next) {
+  res.render('index');
+})
 
 module.exports = router;
