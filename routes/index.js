@@ -1,26 +1,25 @@
 var express = require('express');
 var router = express.Router();
 var session = require('express-session');
-var Growl = require('../models/growl');
+var howl = require('../models/howl');
 
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Growler', growls: req.session.feed });
+  res.render('index', { title: 'howler', howls: req.session.feed });
 });
 
 
-// router.get('/growls', function(req, res, next) {
+// router.get('/howls', function(req, res, next) {
 
 // });
 
 
 router.post('/', function(req, res, next) {
-  var growl = req.body;
+  var howl = req.body;
   var curSession = req.session.feed;
-  curSession.push(growl);
+  curSession.push(howl);
   res.redirect('/');
-  console.log(curSession);
 });
 
 router.get('/', function(req,res,next) {
