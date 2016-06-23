@@ -29,7 +29,7 @@ app.use(session({
   secret: 'keyboard cat',
   resave: false,
   saveUninitialized: true,
-  cookie: { secure: true }
+  cookie: { path: '/', httpOnly: true, secure: false, maxAge: null }
 }))
 
 app.use(function(req, res, next) {

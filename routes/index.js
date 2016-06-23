@@ -6,10 +6,8 @@ var Growl = require('../models/growl');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Growler' });
-  console.log(req.session.feed);
+  res.render('index', { title: 'Growler', growls: req.session.feed });
 });
-
 
 
 // router.get('/growls', function(req, res, next) {
@@ -18,10 +16,16 @@ router.get('/', function(req, res, next) {
 
 
 router.post('/', function(req, res, next) {
-  var growl = Growl.all;
-  req.session.feed.push(growl);
-  console.log(req.session.feed);
+  var growl = req.body;
+  var curSession = req.session.feed;
+
+  curSession.push(growl);
   res.redirect('/');
+  console.log(curSession);
 });
+
+router.get('/', function(req,res,next) {
+  res.render('index');
+})
 
 module.exports = router;

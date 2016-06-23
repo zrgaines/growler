@@ -7,8 +7,20 @@
   <body>
     <h1><%=title%></h1>
     <form action="/" method="post">
-      <input type="text" name="Growl"/>
-      <input type="submit"  value="Enter that growl">
-    </form>
+
+  <div>
+    <label>Growl a growl!</label>
+    <input type="text" name="growl">
+    <input type="submit" value="Enter your growl!">
+  </div>
+  </form>
+
+  <section>
+  <ul>
+    <% feed.forEach(function(item) { %>
+    <li><%= item.growl %></li>
+   <% }) %>
+  </ul>
+  </section>
   </body>
 </html>
