@@ -2,6 +2,7 @@
 <html>
   <head>
     <title><%=title%></title>
+    <link rel="stylesheet" href="http://bootswatch.com/superhero/bootstrap.min.css">
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
@@ -16,8 +17,8 @@
 
     <section>
       <ul>
-        <% growls.forEach(function(growl) { %>
-        <li><%= growl.text %></li>
+        <% feed.forEach(function(item) { %>
+        <li><%= item.text %></li>
        <% }) %>
       </ul>
     </section>
